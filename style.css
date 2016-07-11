@@ -1,0 +1,45 @@
+#container {
+  width: 1000px;
+  /*height: 140px;*/
+  height: 260px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.red {
+  height: 100px;
+  border: 10px black solid;
+  width: 450px;
+  margin: 10px auto;
+  background-color: red;
+}
+
+.green {
+  height: 100px;
+  border: 10px black solid;
+  width: 450px;
+  margin: 10px auto;
+  background-color: green;
+}
+
+.blue {
+  height: 100px;
+  border: 10px black solid;
+  width: 450px;
+  margin: 10px auto;
+  background-color: blue;
+}
+
+#button {
+  height: 100px;
+  border: 10px black solid;
+  width: 450px;
+  margin: 10px auto;
+  background-color: grey;
+}
+
+#remove {
+  position: absolute;
+  left: 265px;
+}
