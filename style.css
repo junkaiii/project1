@@ -1,4 +1,4 @@
-#container {
+#container, #container2 {
   width: 1000px;
   /*height: 140px;*/
   height: 260px;
@@ -31,7 +31,7 @@
   background-color: blue;
 }
 
-#button {
+.button {
   height: 100px;
   border: 10px black solid;
   width: 450px;
