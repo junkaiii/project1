@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   makeDivs();
 
-//player 1 --------
+  //player 1 --------
 
   // if box is red and if a is clicked run this function
   $(document).keydown(function(a) {
@@ -73,48 +73,92 @@ $(document).ready(function() {
 
   //player 2 --------
 
-    // if box is red and if j is clicked run this function
-    $(document).keydown(function(j) {
-      if ($(".boxtwo").first().attr('class') === 'red boxtwo' && j.keyCode == 74) {
-        console.log('clicked');
-        $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-          marginLeft: "+=100",
-          opacity: 0
-        }, 200, function() {
-          $(this).remove();
-        });
-      }
-    });
+  // if box is red and if j is clicked run this function
+  $(document).keydown(function(j) {
+    if ($(".boxtwo").first().attr('class') === 'red boxtwo' && j.keyCode == 74) {
+      console.log('clicked');
+      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
+        marginLeft: "+=100",
+        opacity: 0
+      }, 200, function() {
+        $(this).remove();
+      });
+    }
+  });
 
-    // if box is blue and if k is clicked run this function
-    $(document).keydown(function(k) {
-      if ($(".boxtwo").first().attr('class') === 'blue boxtwo' && k.keyCode == 75) {
-        console.log('clicked');
-        $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-          marginLeft: "+=100",
-          opacity: 0
-        }, 200, function() {
-          $(this).remove();
-        });
-      }
-    });
+  // if box is blue and if k is clicked run this function
+  $(document).keydown(function(k) {
+    if ($(".boxtwo").first().attr('class') === 'blue boxtwo' && k.keyCode == 75) {
+      console.log('clicked');
+      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
+        marginLeft: "+=100",
+        opacity: 0
+      }, 200, function() {
+        $(this).remove();
+      });
+    }
+  });
 
-    // if box is green and if d is clicked run this function
-    $(document).keydown(function(l) {
-      if ($(".boxtwo").first().attr('class') === 'green boxtwo' && l.keyCode == 76) {
-        console.log('clicked');
-        $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-          marginLeft: "+=100",
-          opacity: 0
-        }, 200, function() {
-          $(this).remove();
-        });
-      }
+  // if box is green and if d is clicked run this function
+  $(document).keydown(function(l) {
+    if ($(".boxtwo").first().attr('class') === 'green boxtwo' && l.keyCode == 76) {
+      console.log('clicked');
+      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
+        marginLeft: "+=100",
+        opacity: 0
+      }, 200, function() {
+        $(this).remove();
+      });
+    }
 
 
-    });
+  });
 
-    //player 2 --------
+  //player 2 --------
+
+
+  //stopwatch -----
+
+  var timer = 0;
+
+  var stopWatch = function() {
+    $('#timer').html(timer.toFixed(2));
+    setInterval(function() {
+      timer += 0.01;
+      $('#timer').html(timer.toFixed(2));
+    }, 10);
+  };
+
+// stopWatch();
+
+  //stopwatch-----
+
+
+  //experimental psychadelic borders-----
+
+  var colors  = [ 'red', 'green', 'blue', 'black', 'yellow', 'pink' ];
+  var currentColor = 0;
+
+  var changeColor = function() {
+    setInterval(function(){
+      var colorRandomiser = "#"+((1<<24)*Math.random()|0).toString(16); // from http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript
+      $('.button').css("border-color", colorRandomiser);
+    }, 100);
+  };
+
+changeColor();
+
+  //experimental psychadelic borders-----
+
+
+  //check winning conditions ----
+
+
+
+
+  //check winning conditions ----
+
+
 
 
 });
