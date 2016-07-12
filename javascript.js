@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
-  var numOfBoxes = 20; // defining how many boxes you want to play
 
+  var numOfBoxes = 20; // defining how many boxes you want to play
   var listOfColor = ['red', 'green', 'blue']; //list of colors must be similar to class name
 
 
   var oneBoxList = [];
   var twoBoxList = [];
   var interval;
+
 
   //game initialisation----
 
@@ -25,28 +26,25 @@ $(document).ready(function() {
     }
   };
 
-  makeDivs();
-
   //game initialisation----
-
 
   //stopwatch -----
 
   var timer = 0;
 
   var stopWatch = function() {
-    $('#timer').html(timer.toFixed(2));
+    $('p').html(timer.toFixed(2));
     interval = setInterval(function() {
       timer += 0.01;
-      $('#timer').html(timer.toFixed(2));
+      $('p').html(timer.toFixed(2));
     }, 10);
   };
-
-  stopWatch();
-
   //stopwatch-----
 
 
+//creating function for players
+
+var players = function(){
 
   //player 1 --------
 
@@ -138,9 +136,9 @@ $(document).ready(function() {
 
   //player 2 --------
 
+};
 
-
-
+  //end player function
 
   //experimental psychadelic borders-----
 
@@ -158,29 +156,40 @@ changeColor();
 
   //experimental psychadelic borders-----
 
+// $(document).unbind('keydown'); // locking keys when start
 
   //check winning conditions ----
 
   var checkWinner = function(){
-    if ($('.box').length === 0) {
+    if ($('.box').length === 0 && $('.box').length ==! $('.boxtwo').length) {
       console.log("Player 1 Wins!");
       $(document).unbind('keydown');
       clearInterval(interval);
-      $('#timer').html('Player 1 Wins');
-    } else if ($('.boxtwo').length === 0) {
+      $('p').html('Player 1 Wins');
+    } else if ($('.boxtwo').length === 0 && $('.box').length ==! $('.boxtwo').length) {
       console.log("Player 2 Wins!");
       $(document).unbind('keydown');
       clearInterval(interval);
-      $('#timer').html('Player 2 Wins');
+      $('p').html('Player 2 Wins');
     }
   };
 
-
-
-
   //check winning conditions ----
 
+  //rollover ----
+  $('p').hover(function(){
+    $('p').html('start game!');
+  }, function(){
+    $('p').html('asd vs jkl');
+  });
+  $('p').click(makeDivs)`;
+  $('p').click(stopWatch);
+  setInterval(function(){
 
+  });
+  players();
+
+  //rollover ----
 
 
 });
