@@ -22,7 +22,7 @@ $(document).ready(function() {
       oneBoxList[i] = listOfColor[randomiseColor(0, 2)];
       $('#container').append('<div class="' + oneBoxList[i] + ' box"></div>');
       twoBoxList[i] = listOfColor[randomiseColor(0, 2)];
-      $('#container2').append('<div class="' + twoBoxList[i] + ' boxtwo"></div>');
+      $('#container2').append('<div class="' + twoBoxList[i] + ' boxTwo"></div>');
     }
   };
 
@@ -42,154 +42,196 @@ $(document).ready(function() {
   //stopwatch-----
 
 
-//creating function for players
+  //creating function for players
 
-var players = function(){
+  var players = function() {
 
-  //player 1 --------
+    //player 1 --------
 
-  // if box is red and if a is clicked run this function
-  $(document).keydown(function(a) {
-    if ($(".box").first().attr('class') === 'red box' && a.keyCode == 65) {
-      console.log('clicked');
-      $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    } checkWinner();
-  });
+    // if box is red and if a is clicked run this function
+    var keypressA = function(a) {
+      if ($(".box").first().attr('class') === 'red box' && a.which == 65) {
+        console.log('clicked');
+        $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
+        checkWinner();
+      }
+    };
 
-  // if box is blue and if s is clicked run this function
-  $(document).keydown(function(s) {
-    if ($(".box").first().attr('class') === 'blue box' && s.keyCode == 83) {
-      console.log('clicked');
-      $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    } checkWinner();
-  });
+    $(document).on('keydown', keypressA);
 
-  // if box is green and if d is clicked run this function
-  $(document).keydown(function(d) {
-    if ($(".box").first().attr('class') === 'green box' && d.keyCode == 68) {
-      console.log('clicked');
-      $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    }checkWinner();
+    // if box is blue and if s is clicked run this function
+    var keypressS = function(s) {
+      if ($(".box").first().attr('class') === 'blue box' && s.which == 83) {
+        console.log('clicked');
+        $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
+
+        checkWinner();
+      }
+    };
+
+    $(document).on('keydown', keypressS);
+
+    // if box is green and if d is clicked run this function
+    var keypressD = function(d) {
+      if ($(".box").first().attr('class') === 'green box' && d.which == 68) {
+        console.log('clicked');
+        $(".box").first().css("position", "absolute").css("left", "300px").removeClass("box").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
+
+        checkWinner();
+      }
+    };
+
+    $(document).on('keydown', keypressD);
+
+    //player 1 --------
+
+    //player 2 --------
+
+    // if box is red and if j is clicked run this function
+    var keypressJ = function(j) {
+      if ($(".boxTwo").first().attr('class') === 'red boxTwo' && j.which == 74) {
+        console.log('clicked');
+        $(".boxTwo").first().css("position", "absolute").css("left", "300px").removeClass("boxTwo").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
+
+        checkWinner();
+      }
+    };
+
+    $(document).on('keydown', keypressJ);
+
+    // if box is blue and if k is clicked run this function
+    var keypressK = function(k) {
+      if ($(".boxTwo").first().attr('class') === 'blue boxTwo' && k.which == 75) {
+        console.log('clicked');
+        $(".boxTwo").first().css("position", "absolute").css("left", "300px").removeClass("boxTwo").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
+
+        checkWinner();
+      }
+    };
+
+    $(document).on('keydown', keypressK);
 
 
-  });
+    // if box is green and if l is clicked run this function
+    var keypressL = function(l) {
+      if ($(".boxTwo").first().attr('class') === 'green boxTwo' && l.which == 76) {
+        console.log('clicked');
+        $(".boxTwo").first().css("position", "absolute").css("left", "300px").removeClass("boxTwo").animate({
+          marginLeft: "+=100",
+          opacity: 0
+        }, 200, function() {
+          $(this).remove();
+        });
 
-  //player 1 --------
+        checkWinner();
+      }
+    };
 
-  //player 2 --------
+    $(document).on('keydown', keypressL);
 
-  // if box is red and if j is clicked run this function
-  $(document).keydown(function(j) {
-    if ($(".boxtwo").first().attr('class') === 'red boxtwo' && j.keyCode == 74) {
-      console.log('clicked');
-      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    } checkWinner();
-  });
-
-  // if box is blue and if k is clicked run this function
-  $(document).keydown(function(k) {
-    if ($(".boxtwo").first().attr('class') === 'blue boxtwo' && k.keyCode == 75) {
-      console.log('clicked');
-      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    } checkWinner();
-  });
-
-  // if box is green and if d is clicked run this function
-  $(document).keydown(function(l) {
-    if ($(".boxtwo").first().attr('class') === 'green boxtwo' && l.keyCode == 76) {
-      console.log('clicked');
-      $(".boxtwo").first().css("position", "absolute").css("left", "300px").removeClass("boxtwo").animate({
-        marginLeft: "+=100",
-        opacity: 0
-      }, 200, function() {
-        $(this).remove();
-      });
-    } checkWinner();
-
-
-  });
 
   //player 2 --------
 
 };
 
-  //end player function
+//end player function
 
-  //experimental psychadelic borders-----
+//experimental psychadelic borders-----
 
-  var colors  = [ 'red', 'green', 'blue', 'black', 'yellow', 'pink' ];
-  var currentColor = 0;
+var colors = ['red', 'green', 'blue', 'black', 'yellow', 'pink'];
+var currentColor = 0;
 
-  var changeColor = function() {
-    setInterval(function(){
-      var colorRandomiser = "#"+((1<<24)*Math.random()|0).toString(16); // from http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript
-      $('.button').css("border-color", colorRandomiser);
-    }, 100);
-  };
+var changeColor = function() {
+  setInterval(function() {
+    var colorRandomiser = "#" + ((1 << 24) * Math.random() | 0).toString(16); // from http://stackoverflow.com/questions/1484506/random-color-generator-in-javascript
+    $('.button').css("border-color", colorRandomiser);
+  }, 100);
+};
 
 changeColor();
 
-  //experimental psychadelic borders-----
+//experimental psychadelic borders-----
 
-// $(document).unbind('keydown'); // locking keys when start
 
-  //check winning conditions ----
+//check winning conditions ----
 
-  var checkWinner = function(){
-    if ($('.box').length === 0 && $('.box').length ==! $('.boxtwo').length) {
-      console.log("Player 1 Wins!");
-      $(document).unbind('keydown');
-      clearInterval(interval);
+var checkWinner = function() {
+  if ($('.box').length === 0)  {
+    console.log("Player 1 Wins!");
+    $(document).off('keydown');
+    clearInterval(interval);
+    $('p').html('Player 1 Wins ');
+    $('p').hover(function() {
+      $('p').html('start game!');
+    }, function() {
       $('p').html('Player 1 Wins');
-    } else if ($('.boxtwo').length === 0 && $('.box').length ==! $('.boxtwo').length) {
-      console.log("Player 2 Wins!");
-      $(document).unbind('keydown');
-      clearInterval(interval);
+    });
+  } else if ($('.boxTwo').length === 0) {
+    console.log("Player 2 Wins!");
+    $(document).off('keydown');
+    clearInterval(interval);
+    $('p').html('Player 2 Wins ');
+    $('p').hover(function() {
+      $('p').html('start game!');
+    }, function() {
       $('p').html('Player 2 Wins');
-    }
-  };
+    });
+  }
+};
 
-  //check winning conditions ----
+//check winning conditions ----
 
-  //rollover ----
-  $('p').hover(function(){
-    $('p').html('start game!');
-  }, function(){
-    $('p').html('asd vs jkl');
-  });
-  $('p').click(makeDivs)`;
-  $('p').click(stopWatch);
-  setInterval(function(){
+//rollover ----
 
-  });
+var initGame = function() {
+  $('#container').html('');
+  $('#container2').html('');
+  timer = 0;
+  makeDivs();
+  stopWatch();
   players();
+};
 
-  //rollover ----
+
+$('p').hover(function() {
+  $('p').html('start game!');
+}, function() {
+  $('p').html('asd vs jkl');
+});
+$('p').click(initGame);
+
+
+
+
+
+
+
+//rollover ----
 
 
 });
