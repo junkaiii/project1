@@ -7,8 +7,9 @@ $(document).ready(function() {
 
   var oneBoxList = [];
   var twoBoxList = [];
+  var interval;
 
-
+  //game initialisation----
 
   var randomiseColor = function(min, max) { // randomiser function
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -26,6 +27,27 @@ $(document).ready(function() {
 
   makeDivs();
 
+  //game initialisation----
+
+
+  //stopwatch -----
+
+  var timer = 0;
+
+  var stopWatch = function() {
+    $('#timer').html(timer.toFixed(2));
+    interval = setInterval(function() {
+      timer += 0.01;
+      $('#timer').html(timer.toFixed(2));
+    }, 10);
+  };
+
+  stopWatch();
+
+  //stopwatch-----
+
+
+
   //player 1 --------
 
   // if box is red and if a is clicked run this function
@@ -38,7 +60,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    } checkWinner();
   });
 
   // if box is blue and if s is clicked run this function
@@ -51,7 +73,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    } checkWinner();
   });
 
   // if box is green and if d is clicked run this function
@@ -64,7 +86,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    }checkWinner();
 
 
   });
@@ -83,7 +105,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    } checkWinner();
   });
 
   // if box is blue and if k is clicked run this function
@@ -96,7 +118,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    } checkWinner();
   });
 
   // if box is green and if d is clicked run this function
@@ -109,7 +131,7 @@ $(document).ready(function() {
       }, 200, function() {
         $(this).remove();
       });
-    }
+    } checkWinner();
 
 
   });
@@ -117,21 +139,7 @@ $(document).ready(function() {
   //player 2 --------
 
 
-  //stopwatch -----
 
-  var timer = 0;
-
-  var stopWatch = function() {
-    $('#timer').html(timer.toFixed(2));
-    setInterval(function() {
-      timer += 0.01;
-      $('#timer').html(timer.toFixed(2));
-    }, 10);
-  };
-
-// stopWatch();
-
-  //stopwatch-----
 
 
   //experimental psychadelic borders-----
@@ -152,6 +160,20 @@ changeColor();
 
 
   //check winning conditions ----
+
+  var checkWinner = function(){
+    if ($('.box').length === 0) {
+      console.log("Player 1 Wins!");
+      $(document).unbind('keydown');
+      clearInterval(interval);
+      $('#timer').html('Player 1 Wins');
+    } else if ($('.boxtwo').length === 0) {
+      console.log("Player 2 Wins!");
+      $(document).unbind('keydown');
+      clearInterval(interval);
+      $('#timer').html('Player 2 Wins');
+    }
+  };
 
 
 
