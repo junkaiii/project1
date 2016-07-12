@@ -48,8 +48,7 @@ $(document).ready(function() {
 
 
 
-
-//player 1 --------
+  //player 1 --------
 
   // if box is red and if a is clicked run this function
   $(document).keydown(function(a) {
@@ -93,7 +92,6 @@ $(document).ready(function() {
   });
 
   //player 1 --------
-
 
   //player 2 --------
 
@@ -176,7 +174,13 @@ changeColor();
       $('#timer').html('Player 2 Wins');
     }
   };
+
+
+
+
   //check winning conditions ----
+
+
 
 
 });

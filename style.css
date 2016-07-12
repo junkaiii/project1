@@ -1,21 +1,23 @@
+#alignment {
+  margin: 0 auto;
+}
 
 #container, #container2 {
-  width: 1000px;
+  width: 800px;
   /*height: 140px;*/
-  height: 260px;
-  margin: 0 auto;
+  height: 390px;
   overflow: hidden;
   position: relative;
   display: inline-block;
 }
 
-/*#container {
+#container {
   margin-left: 50px;
-}*/
+}
 
-/*#container2 {
+#container2 {
   margin-right: 50px;
-}*/
+}
 
 p {
   font-size: 100px;
@@ -28,36 +30,47 @@ p {
 .red {
   height: 100px;
   border: 10px black solid;
-  width: 450px;
-  margin: 10px auto;
+  width: 400px;
+  margin: 10px 0;
   background-color: red;
 }
 
 .green {
   height: 100px;
   border: 10px black solid;
-  width: 450px;
-  margin: 10px auto;
+  width: 400px;
+  margin: 10px 0;
   background-color: green;
 }
 
 .blue {
   height: 100px;
   border: 10px black solid;
-  width: 450px;
-  margin: 10px auto;
+  width: 400px;
+  margin: 10px 0;
   background-color: blue;
 }
 
 .button {
   height: 100px;
   border: 10px black solid;
-  width: 450px;
-  margin: 10px auto;
-  background-color: grey;
+  width: 400  px;
+  margin: 10px 15px;
+  position: absolute;
 }
+
+#button1 {
+  top: 8px;
+  left: 43px;
+}
+
+#button2 {
+  top: 8px;
+  left: 847px;
+}
+
 
 #remove {
   position: absolute;
-  left: 265px;
+  /*left: 95%;*/
 }
