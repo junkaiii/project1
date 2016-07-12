@@ -1,12 +1,9 @@
-#alignment {
-  width: 89.99%
-  margin: 0 auto;
-}
 
 #container, #container2 {
-  width: 47.05%;
+  width: 1000px;
   /*height: 140px;*/
-  height: 390px;
+  height: 260px;
+  margin: 0 auto;
   overflow: hidden;
   position: relative;
   display: inline-block;
@@ -31,49 +28,36 @@ p {
 .red {
   height: 100px;
   border: 10px black solid;
-  width: 43.75%;
-  margin: 10px 0;
+  width: 450px;
+  margin: 10px auto;
   background-color: red;
 }
 
 .green {
   height: 100px;
   border: 10px black solid;
-  width: 43.75%;
-  margin: 10px 0;
+  width: 450px;
+  margin: 10px auto;
   background-color: green;
 }
 
 .blue {
   height: 100px;
   border: 10px black solid;
-  width: 43.75%;
-  margin: 10px 0;
+  width: 450px;
+  margin: 10px auto;
   background-color: blue;
 }
 
 .button {
   height: 100px;
   border: 10px black solid;
-  width: 350px;
-  margin: 10px 15px;
-  position: absolute;
+  width: 450px;
+  margin: 10px auto;
+  background-color: grey;
 }
-
-#button1 {
-  width: 21.64%;
-  top: 1.1%;
-  left: 0;
-}
-
-#button2 {
-  width: 21.64;
-  top: 1.1%;
-  left: 847px;
-}
-
 
 #remove {
   position: absolute;
-  /*left: 95%;*/
+  left: 265px;
 }
